@@ -24,7 +24,7 @@ Both views run the exact same detection and reasoning pipeline underneath — on
 
 ### Core features
 
-- **🔍 Rule-based fraud & KYC detection** — transparent, explainable signals (new/untrusted device, first-time beneficiary, document mismatches, repeated resubmissions, high device risk, etc.), not a black box.
+- **🔍 Rule based fraud & KYC detection** — transparent, explainable signals (new/untrusted device, first-time beneficiary, document mismatches, repeated resubmissions, high device risk, etc.), not a black box.
 - **🤖 AI-assisted reasoning** — each flagged case is sent to Google's **Gemini** along with the detected signals, and returns a plain language explanation, a suggested action, and a "second look" field for the human reviewer. If no API key is configured, ClearFlag falls back to a deterministic, still explainable rules based summary — so the app always works, with or without a live key.
 - **🎯 Training mode** — trainees guess the risk level on real (synthetic) cases, then see the correct answer with reasoning. Streaks and accuracy trends are tracked over time.
 - **➕ Add cases two ways** — manual entry, or bulk CSV upload (with per row validation, so one bad row doesn't kill the batch).
