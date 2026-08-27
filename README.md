@@ -39,7 +39,7 @@ Both views run the exact same detection and reasoning pipeline underneath — on
 - **SQLite** — case storage (zero setup, file-based)
 - **Google Gemini API** (`google-genai`) — the AI reasoning layer, with a deterministic fallback
 - **pandas** — data prep for analytics and model training
-- **scikit-learn** — `DecisionTreeClassifier` for the model-comparison view, evaluated with accuracy + a confusion matrix (this is a *classification* task, not regression)
+- **scikit-learn** — `DecisionTreeClassifier` for the model comparison view, evaluated with accuracy + a confusion matrix (this is a *classification* task, not regression)
 - **Altair** — charts in the Insights view
 
 ---
@@ -135,7 +135,7 @@ This is a learning-focused proof of concept, not a production fraud system. It i
 - Defined human-review, escalation, and override procedures
 - Model validation: false-positive/negative costs, calibration, drift monitoring, bias testing across relevant groups, and independent governance sign-off
 - If moving from rules to ML: labelled historical data, leakage testing, reproducible training, and change control
-- If extended to a multi-step agent: strict tool permissions, bounded steps, per-step audit logs, and mandatory human approval for consequential actions
+- If extended to a multi step agent: strict tool permissions, bounded steps, per-step audit logs, and mandatory human approval for consequential actions
 
 ## Project structure
 
