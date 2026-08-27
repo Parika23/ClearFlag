@@ -2,7 +2,7 @@
 
 **An AI-assisted fraud & onboarding-risk triage assistant — with a training mode built in.**
 
-ClearFlag is a demo-scale system that flags suspicious transactions and risky account sign-ups, explains *why* in plain language, and routes them to a human for the final call. The same reasoning engine also powers a training mode, so new analysts can practice spotting risk on realistic cases before touching the real queue.
+ClearFlag is a demo scale system that flags suspicious transactions and risky account sign-ups, explains *why* in plain language, and routes them to a human for the final call. The same reasoning engine also powers a training mode, so new analysts can practice spotting risk on realistic cases before touching the real queue.
 
 🔗 **Try the live app → https://clearflag.streamlit.app/**
 
@@ -25,9 +25,9 @@ Both views run the exact same detection and reasoning pipeline underneath — on
 ### Core features
 
 - **🔍 Rule-based fraud & KYC detection** — transparent, explainable signals (new/untrusted device, first-time beneficiary, document mismatches, repeated resubmissions, high device risk, etc.), not a black box.
-- **🤖 AI-assisted reasoning** — each flagged case is sent to Google's **Gemini** along with the detected signals, and returns a plain-language explanation, a suggested action, and a "second look" field for the human reviewer. If no API key is configured, ClearFlag falls back to a deterministic, still-explainable rules-based summary — so the app always works, with or without a live key.
+- **🤖 AI-assisted reasoning** — each flagged case is sent to Google's **Gemini** along with the detected signals, and returns a plain language explanation, a suggested action, and a "second look" field for the human reviewer. If no API key is configured, ClearFlag falls back to a deterministic, still explainable rules based summary — so the app always works, with or without a live key.
 - **🎯 Training mode** — trainees guess the risk level on real (synthetic) cases, then see the correct answer with reasoning. Streaks and accuracy trends are tracked over time.
-- **➕ Add cases two ways** — manual entry, or bulk CSV upload (with per-row validation, so one bad row doesn't kill the batch).
+- **➕ Add cases two ways** — manual entry, or bulk CSV upload (with per row validation, so one bad row doesn't kill the batch).
 - **📊 Insights dashboard** — case volume, risk mix, most common signals, review backlog, training accuracy/streaks, and a small **decision-tree classifier** trained on the flagged cases as a sanity check against the transparent rules.
 - **📝 Human-in-the-loop review log** — every analyst decision (agree / override + note) is saved, so there's a record of human oversight, not just AI output.
 
@@ -57,7 +57,7 @@ The app creates its SQLite database automatically on first run — no setup requ
 
 ### (Optional) Enable live AI reasoning
 
-Without a key, ClearFlag still works — it uses a deterministic fallback that produces explainable, rules-based assessments. To get live Gemini-generated reasoning instead, set an API key:
+Without a key, ClearFlag still works — it uses a deterministic fallback that produces explainable, rules-based assessments. To get live Gemini generated reasoning instead, set an API key:
 
 ```bash
 # Option 1: environment variable
@@ -95,13 +95,13 @@ Validation  →  rejects malformed rows, keeps the rest usable
 Rule-based detection  →  transparent, explainable signals
      │
      ▼
-AI reasoning (Gemini, with deterministic fallback)  →  risk level, suggested action, plain-language rationale, "second look" field
+AI reasoning (Gemini, with deterministic fallback)  →  risk level, suggested action, plain language rationale, "second look" field
      │
      ▼
 Analyst view (human review + audit log)   or   Training view (guess → feedback)
 ```
 
-The "second look" field is intentionally lightweight — a nudge toward what a reviewer should double-check, not an autonomous decision. ClearFlag never independently gathers data, investigates, or makes a final call; a human always does.
+The "second look" field is intentionally lightweight — a nudge toward what a reviewer should double check, not an autonomous decision. ClearFlag never independently gathers data, investigates, or makes a final call; a human always does.
 
 ---
 
@@ -137,15 +137,6 @@ This is a learning-focused proof of concept, not a production fraud system. It i
 - If moving from rules to ML: labelled historical data, leakage testing, reproducible training, and change control
 - If extended to a multi-step agent: strict tool permissions, bounded steps, per-step audit logs, and mandatory human approval for consequential actions
 
-### Planned improvements
-
-- Authentication and role-based access control
-- Adversarial/red-team testing (prompt injection, rule evasion)
-- Managed database, backups, and operational monitoring
-- A bounded multi-step investigation agent with human approval gates
-
----
-
 ## Project structure
 
 ```
@@ -164,4 +155,4 @@ ClearFlag/
 
 ## Why this project exists
 
-ClearFlag was built to demonstrate the same architectural pattern — validation → rule-based detection → ML/AI-assisted reasoning → human-reviewed output — applied to a fraud/KYC domain, deliberately mirroring the service-layer structure used in my other project, [FlowState](#), for consistency across a portfolio. It touches AI/LLM integration, applied ML, and banking/fintech risk concepts in one small, explainable, honestly-scoped app.
+ClearFlag was built to demonstrate the same architectural pattern — validation → rule-based detection → ML/AI-assisted reasoning → human reviewed output — applied to a fraud/KYC domain, deliberately mirroring the service layer structure used in my other project, [FlowState](#), for consistency across a portfolio. It touches AI/LLM integration, applied ML, and banking/fintech risk concepts in one small, explainable, honestly scoped app.
