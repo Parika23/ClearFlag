@@ -5,8 +5,10 @@ from pathlib import Path
 from typing import Any
 import os
 from google import genai
+import tempfile
 
-DEFAULT_DB_PATH = Path(__file__).with_name("clearflag.db")
+DEFAULT_DB_PATH = Path(tempfile.gettempdir()) / "clearflag.db"
+
 TRANSACTIONS = [
  {"id":"TX-001","customer_name":"Asha Mehta","amount":1250,"currency":"INR","hour":14,"new_device":False,"device_trusted":True,"beneficiary_new":False},
  {"id":"TX-002","customer_name":"Rohan Shah","amount":185000,"currency":"INR","hour":2,"new_device":True,"device_trusted":False,"beneficiary_new":True},
