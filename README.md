@@ -133,7 +133,7 @@ This is a learning focused proof of concept, not a production fraud system. It i
 
 - A documented lawful basis for data use, retention schedules, encryption, access control, and audit logs
 - Defined human review, escalation, and override procedures
-- Model validation: false-positive/negative costs, calibration, drift monitoring, bias testing across relevant groups, and independent governance sign-off
+- Model validation: false positive/negative costs, calibration, drift monitoring, bias testing across relevant groups, and independent governance sign-off
 - If moving from rules to ML: labelled historical data, leakage testing, reproducible training, and change control
 - If extended to a multi step agent: strict tool permissions, bounded steps, per step audit logs, and mandatory human approval for consequential actions
 
