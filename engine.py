@@ -76,12 +76,17 @@ def _fallback(r: dict[str,Any], kind: str, signals: list[str]) -> dict[str, str|
     who = r.get("customer_name") or r.get("applicant_name") or "This case"
     why = ", ".join(x.lower() for x in signals) if signals else "no risk signals that meet the demo rules"
     return {"risk_level":risk,"suggested_action":action,"reasoning":f"{who}'s case is {risk} risk because the detection layer found {why}.","second_look_field":field,"ruled_out":"A single unusual signal can be legitimate; the combined pattern drives this recommendation."}
-
 def reason(r: dict[str,Any], kind: str, signals: list[str]) -> dict[str,str|None]:
     """Generate an AI-assisted explanation using Gemini."""
 
     api_key = os.getenv("GEMINI_API_KEY")
 
+    if not api_key:
+        try:
+            import streamlit as st
+            api_key = st.secrets["GEMINI_API_KEY"]
+        except Exception:
+            api_key = None
     if not api_key:
         return _fallback(r, kind, signals)
 
