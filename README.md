@@ -121,13 +121,13 @@ Model features: `amount`, `transaction_hour`, `new_device`, `device_trusted`, `b
 
 ## Scope & limitations (by design)
 
-This is a learning-focused proof of concept, not a production fraud system. It intentionally does **not** do:
+This is a learning focused proof of concept, not a production fraud system. It intentionally does **not** do:
 
 - Continuous transaction monitoring
 - Cross-institution data sharing
 - Identity verification
 - Autonomous payment or account decisions
-- Authentication / role-based access control (not yet built — see below)
+- Authentication / role based access control (not yet built — see below)
 
 ### What a real deployment would still need
 
@@ -136,6 +136,11 @@ This is a learning-focused proof of concept, not a production fraud system. It i
 - Model validation: false-positive/negative costs, calibration, drift monitoring, bias testing across relevant groups, and independent governance sign-off
 - If moving from rules to ML: labelled historical data, leakage testing, reproducible training, and change control
 - If extended to a multi step agent: strict tool permissions, bounded steps, per-step audit logs, and mandatory human approval for consequential actions
+
+## Planned improvements
+- Authentication and role-based access control
+- Managed database, backups, and operational monitoring
+- A bounded multi step investigation agent with human approval gates
 
 ## Project structure
 
