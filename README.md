@@ -1,6 +1,6 @@
 # 🚩 ClearFlag
 
-**An AI-assisted fraud & onboarding-risk triage assistant — with a training mode built in.**
+**An AI-assisted fraud & onboarding risk triage assistant — with a training mode built in.**
 
 ClearFlag is a demo scale system that flags suspicious transactions and risky account sign ups, explains *why* in plain language, and routes them to a human for the final call. The same reasoning engine also powers a training mode, so new analysts can practice spotting risk on realistic cases before touching the real queue.
 
