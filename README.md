@@ -57,7 +57,7 @@ The app creates its SQLite database automatically on first run — no setup requ
 
 ### (Optional) Enable live AI reasoning
 
-Without a key, ClearFlag still works — it uses a deterministic fallback that produces explainable, rules-based assessments. To get live Gemini generated reasoning instead, set an API key:
+Without a key, ClearFlag still works — it uses a deterministic fallback that produces explainable, rules based assessments. To get live Gemini generated reasoning instead, set an API key:
 
 ```bash
 # Option 1: environment variable
